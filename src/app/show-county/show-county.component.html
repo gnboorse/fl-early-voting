@@ -1,0 +1,73 @@
+<div>
+  <div *ngIf="selectionMade">
+    <mat-card class="spaced-card">
+      <mat-card-header>
+        <mat-card-title>
+          {{ currentCounty.metadata.county_name }} Early Voting Locations ({{
+            currentCounty.locations.length
+          }})</mat-card-title
+        >
+        <mat-card-subtitle>
+          <span *ngIf="currentCounty.metadata.contact_email">
+            For more information, please contact
+            {{ currentCounty.metadata.contact_name }} by email at
+            <a href="mailto:{{ currentCounty.metadata.contact_email }}">{{
+              currentCounty.metadata.contact_email
+            }}</a>
+            or by phone at
+            <a href="tel:{{ currentCounty.metadata.contact_phone }}">{{
+              currentCounty.metadata.contact_phone
+            }}</a>
+          </span>
+          <span *ngIf="!currentCounty.metadata.contact_email"
+            >No contact information found for this county.</span
+          >
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content
+        >Select any one of the locations below to learn more.</mat-card-content
+      >
+    </mat-card>
+    <div class="second-spaced-card">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let location of currentCounty.locations">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ location.name }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ location.location_type }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          Address: &nbsp; <strong>{{ location.address }}</strong>
+          <br />
+          <table class="hourstable">
+            <tr>
+              <th>Date</th>
+              <th>Opens</th>
+              <th>Closes</th>
+            </tr>
+            <tr *ngFor="let hours of location.hours">
+              <td>{{ hours.day }}</td>
+              <ng-container *ngIf="hours.available">
+                <td>{{ hours.start_time }}</td>
+                <td>{{ hours.end_time }}</td>
+              </ng-container>
+              <ng-container *ngIf="!hours.available">
+                <td colspan="2">Not open</td>
+              </ng-container>
+            </tr>
+          </table>
+
+          <br />
+          Times displayed are in {{ location.time_zone }} time.
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+  <div *ngIf="!selectionMade">
+    <mat-card class="spaced-card">
+      <mat-card-content>No county selection made</mat-card-content>
+    </mat-card>
+  </div>
+</div>

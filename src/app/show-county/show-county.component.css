@@ -1,0 +1,20 @@
+.second-spaced-card {
+  max-width: 75%;
+  margin: 1em;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 3px;
+}

@@ -1,0 +1,10 @@
+.toolbar-filler {
+  flex: 1 1 auto;
+}
+.header-link {
+  cursor: pointer;
+}
+
+.header-link:focus {
+  outline-width: 0;
+}

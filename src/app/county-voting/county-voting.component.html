@@ -1,0 +1,26 @@
+<div>
+  <mat-card class="spaced-card">
+    <mat-card-header>
+      <mat-card-title>Choose Your County</mat-card-title>
+      <mat-card-subtitle
+        >Select a county from the dropdown menu below to view early voting
+        locations and times there.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <mat-select [(value)]="selected" placeholder="Choose your county">
+          <mat-option
+            *ngFor="let county of countiesData"
+            value="{{ county.code }}"
+          >
+            {{ county.county_name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br />
+    </mat-card-content>
+  </mat-card>
+
+  <app-show-county [county]="selected"></app-show-county>
+</div>
