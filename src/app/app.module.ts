@@ -18,13 +18,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { CountyVotingComponent } from './county-voting/county-voting.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ShowCountyComponent } from './show-county/show-county.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountyVotingComponent,
     NotFoundComponent,
-    ShowCountyComponent
+    ShowCountyComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

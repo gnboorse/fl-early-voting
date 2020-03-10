@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CountyVotingComponent } from './county-voting/county-voting.component'
 import { NotFoundComponent } from './not-found/not-found.component'
+import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
   },
   {
     path: 'notfound',

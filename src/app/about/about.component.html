@@ -1,0 +1,29 @@
+<mat-card class="spaced-card">
+  <mat-card-header>
+    <mat-card-title>About</mat-card-title>
+    <!-- <mat-card-subtitle>You've wandered off.</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content
+    ><p>
+      This site serves as a resource for those looking for information about
+      early voting locations within the state of Florida. The Florida Department
+      of State's Division of Elections does post
+      <a
+        href="https://dos.myflorida.com/elections/for-voters/voting/early-voting/"
+        >this data on their site</a
+      >, but it is in a format that is <b>confusing and inaccessible</b> for
+      most users. This site was created to provide Florida residents with
+      easily-accessible information about early voting polling places and the
+      hours that each location is open.
+    </p>
+    <p>
+      Please direct any questions to the author of this site on Twitter:
+      <a href="https://twitter.com/gnboorse">@gnboorse</a>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" [routerLink]="['/home']">
+      Go Home
+    </button>
+  </mat-card-actions>
+</mat-card>
