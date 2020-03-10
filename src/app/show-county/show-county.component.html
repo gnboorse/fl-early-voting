@@ -39,7 +39,13 @@
               {{ location.location_type }}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          Address: &nbsp; <strong>{{ location.address }}</strong>
+          Address: &nbsp; <strong>{{ location.address }}</strong> (<a
+            target="_blank"
+            href="https://www.google.com/maps/search/?api=1&query={{
+              location.name
+            }} {{ location.address }}"
+            >Show in Google Maps</a
+          >)<br />
           <br />
           <table class="hourstable">
             <tr>
